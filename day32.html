@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact Form</title>
+
+<style>
+body{ background-color:antiquewhite;
+    font-family: Arial;
+    padding:30px;
+}
+
+form{
+    background-color:rgb(195, 206, 173);
+    width:300px;
+    padding:20px;
+    border:1px solid black;
+}
+
+input, textarea{
+    width:100%;
+    padding:8px;
+    margin:8px 0;
+}
+
+button{
+    padding:10px 20px;
+    background:red;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+#error{
+    color:red;
+}
+
+#success{
+    color:green;
+}
+
+#preview{
+    margin-top:20px;
+    padding:10px;
+    border:1px solid gray;
+}
+
+.dark{
+    background:black;
+    color:white;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h2>Contact Form</h2>
+
+
+<form id="contactForm">
+
+
+<label>Name</label>
+<input type="text" id="name">
+
+
+<label>Email</label>
+<input type="email" id="email">
+
+
+<label>Message</label>
+<textarea id="message"></textarea>
+
+
+<button type="submit">Send</button>
+
+
+<p id="error"></p>
+<p id="success"></p>
+
+
+</form>
+
+
+
+<h3>Live Message Preview:</h3>
+
+<div id="preview">
+No message yet...
+</div>
+
+
+<br>
+
+
+<button id="themeBtn">
+Change Theme
+</button>
+
+
+
+<script>
+
+
+// Form elements
+
+let form = document.getElementById("contactForm");
+
+let nameInput = document.getElementById("name");
+
+let emailInput = document.getElementById("email");
+
+let messageInput = document.getElementById("message");
+
+let preview = document.getElementById("preview");
+
+
+
+
+// FORM SUBMIT EVENT
+
+form.addEventListener("submit", function(event){
+
+
+    // stop page refresh
+
+    event.preventDefault();
+
+
+
+    let name = nameInput.value;
+
+    let email = emailInput.value;
+
+
+
+    let error = document.getElementById("error");
+
+    let success = document.getElementById("success");
+
+
+
+    error.innerHTML="";
+    success.innerHTML="";
+
+
+
+    // validation
+
+    if(name==="" || email==="")
+    {
+
+        error.innerHTML="Name and Email are required";
+
+    }
+
+    else{
+
+
+        success.innerHTML="Sending...";
+
+
+        setTimeout(function(){
+
+
+            success.innerHTML="Message Sent Successfully!";
+
+
+        },2000);
+
+
+    }
+
+
+
+});
+
+
+
+
+// LIVE PREVIEW EVENT
+
+messageInput.addEventListener("input", function(){
+
+
+    if(messageInput.value==="")
+    {
+
+        preview.innerHTML="No message yet...";
+
+    }
+
+    else{
+
+        preview.innerHTML = messageInput.value;
+
+    }
+
+
+});
+
+
+
+
+
+// Extra Event Feature
+// Theme change
+
+
+let themeBtn = document.getElementById("themeBtn");
+
+
+themeBtn.addEventListener("click",function(){
+
+
+    document.body.classList.toggle("dark");
+
+
+});
+
+
+
+
+
+// Other DOM Events Examples
+
+
+nameInput.addEventListener("focus",function(){
+
+    nameInput.style.background="lightyellow";
+
+});
+
+
+nameInput.addEventListener("blur",function(){
+
+    nameInput.style.background="white";
+
+});
+
+
+
+</script>
+
+
+</body>
+</html>

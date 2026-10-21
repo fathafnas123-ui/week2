@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Fathgraphy Economics</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+
+<body class="bg-gray-100">
+
+
+<!-- Navbar -->
+
+<header class="bg-black text-white p-5 fixed w-full top-0">
+
+<nav class="flex justify-between items-center">
+
+<h1 class="text-2xl font-bold">
+Fathgraphy Economics
+</h1>
+
+
+<ul class="flex gap-6">
+
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#courses">Courses</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+
+</nav>
+
+</header>
+
+
+
+<!-- Hero -->
+
+
+<section id="home"
+class="h-screen flex items-center justify-center bg-blue-100">
+
+
+<div class="text-center">
+
+
+<h1 class="text-5xl font-bold">
+
+Learn Economics Easily
+
+</h1>
+
+
+<p class="mt-5 text-xl">
+
+Study Micro, Macro and International Economics
+
+</p>
+
+
+
+<button id="openBtn"
+class="mt-6 bg-black text-white px-6 py-3 rounded">
+
+Join Course
+
+</button>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<!-- About -->
+
+
+<section id="about"
+class="p-10">
+
+
+<h2 class="text-3xl font-bold text-center">
+About Us
+</h2>
+
+
+<p class="mt-5 text-center">
+
+Fathgraphy Economics provides simple economics
+learning materials for students.
+
+</p>
+
+
+</section>
+
+
+
+
+
+<!-- Courses -->
+
+
+<section id="courses"
+class="p-10">
+
+
+<h2 class="text-3xl font-bold text-center mb-10">
+
+Courses
+
+</h2>
+
+
+
+<div class="grid md:grid-cols-3 gap-8">
+
+
+
+<div class="bg-white p-6 rounded shadow">
+
+<h3 class="text-xl font-bold">
+Micro Economics
+</h3>
+
+<p>
+Demand, Supply, Market Theory
+</p>
+
+</div>
+
+
+
+
+<div class="bg-white p-6 rounded shadow">
+
+<h3 class="text-xl font-bold">
+Macro Economics
+</h3>
+
+<p>
+GDP, Inflation, Money
+</p>
+
+</div>
+
+
+
+
+<div class="bg-white p-6 rounded shadow">
+
+<h3 class="text-xl font-bold">
+International Trade
+</h3>
+
+<p>
+Ricardo, WTO, BOP
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- Topics -->
+
+
+<section class="bg-black text-white p-10">
+
+
+<h2 class="text-3xl text-center font-bold">
+
+Important Topics
+
+</h2>
+
+
+<div class="grid md:grid-cols-4 gap-5 mt-8">
+
+
+<div class="bg-gray-800 p-5 rounded">
+Demand
+</div>
+
+
+<div class="bg-gray-800 p-5 rounded">
+Supply
+</div>
+
+
+<div class="bg-gray-800 p-5 rounded">
+Trade
+</div>
+
+
+<div class="bg-gray-800 p-5 rounded">
+Finance
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- Contact -->
+
+
+<section id="contact"
+class="p-10">
+
+
+<h2 class="text-3xl font-bold text-center">
+
+Contact
+
+</h2>
+
+
+<form class="max-w-md mx-auto mt-5">
+
+
+<input 
+class="border p-3 w-full mb-3"
+placeholder="Name">
+
+
+<input
+class="border p-3 w-full mb-3"
+placeholder="Email">
+
+
+
+<textarea
+class="border p-3 w-full"
+placeholder="Message">
+
+</textarea>
+
+
+<button
+class="bg-blue-600 text-white px-5 py-3 mt-3 rounded">
+
+Send
+
+</button>
+
+
+</form>
+
+
+</section>
+
+
+
+
+
+<!-- Modal -->
+
+
+<div id="modal"
+class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center">
+
+
+
+<div class="bg-white p-8 rounded w-80">
+
+
+<h2 class="text-2xl font-bold">
+Welcome
+</h2>
+
+
+<p class="my-5">
+Start your Economics journey!
+</p>
+
+
+
+<button id="closeBtn"
+class="bg-red-500 text-white px-5 py-2 rounded">
+
+Close
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+let openBtn =
+document.getElementById("openBtn");
+
+
+let modal =
+document.getElementById("modal");
+
+
+let closeBtn =
+document.getElementById("closeBtn");
+
+
+
+openBtn.addEventListener("click",()=>{
+
+
+modal.classList.remove("hidden");
+
+
+});
+
+
+
+
+closeBtn.addEventListener("click",()=>{
+
+
+modal.classList.add("hidden");
+
+
+});
+
+
+
+</script>
+
+
+
+</body>
+</html>

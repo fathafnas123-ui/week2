@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>newtask</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+ <script>
+
+    document.addEventListener("DOMContentLoaded",function(){
+
+        let profilebtn=document.getElementById("profilebtn");
+        let modal=document.getElementById("modal");
+        let name=document.getElementById("name");
+        let email=document.getElementById("email");
+        let closebtn=document.getElementById("closebtn");
+
+        profilebtn.addEventListener("click",function(){
+
+            name.textContent="name:fathima kc";
+            email.textContent="email:kcfat577@gmail.com";
+
+            modal.classList.remove("hidden");
+    
+        });
+        closebtn.addEventListener("click",function(){
+            modal.classList.add("hidden");
+        })
+    });
+</script>
+</head>
+<body  class="bg-gray-100 flex justify-center items-center h-screen">
+     <button id="profilebtn" class="bg-blue-600 text-white px-5 py-2 rounded">profile</button>
+     <div id="modal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+      <div class="bg-white p-6 rounded-lg shadow-lg w-80 text-center"> 
+        <h2 class="text-2xl font-bold mb-4">Profile</h2>
+             <p id="name"></p>
+            <p id="email" class="mb-4"></p>
+            <button id="closebtn" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">close</button>
+      </div>
+        
+        </div>
+        </body>
+        </html>

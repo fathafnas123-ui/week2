@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>EmailJS Contact Form</title>
+
+    <!-- EmailJS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+</head>
+
+<body>
+
+    <h2>Contact Form</h2>
+
+    <form id="contactForm">
+
+        <label>Name</label><br>
+        <input type="text" id="name" required>
+
+        <br><br>
+
+        <label>Email</label><br>
+        <input type="email" id="email" required>
+
+        <br><br>
+
+        <label>Message</label><br>
+        <textarea id="message" rows="5" cols="30" required></textarea>
+
+        <br><br>
+
+        <button type="submit">Send</button>
+
+    </form>
+
+    <br>
+
+    <p id="status"></p>
+
+    <script>
+
+        // Initialize EmailJS
+        emailjs.init("qB7TQ9dcw6BK7brCY");
+
+        // Get Form
+        let form = document.getElementById("contactForm");
+
+        // Get Status
+        let status = document.getElementById("status");
+
+        // Submit Event
+        form.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            let userName = document.getElementById("name").value;
+
+            let userEmail = document.getElementById("email").value;
+
+            let userMessage = document.getElementById("message").value;
+
+            status.textContent = "Sending...";
+
+            emailjs.send(
+
+                "service_m7isd8u",
+
+                "template_7i6esln",
+
+                {
+
+                    name: userName,
+
+                    email: userEmail,
+
+                    message: userMessage
+
+                }
+
+            )
+
+            .then(function () {
+
+                status.textContent = "✅ Message Sent Successfully!";
+
+                form.reset();
+
+            })
+
+            .catch(function (error) {
+
+                console.log(error);
+
+                status.textContent = "❌ Failed to Send Message!";
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

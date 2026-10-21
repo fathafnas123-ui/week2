@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fathgraphy Education</title>
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+
+<body class="bg-gray-100">
+
+
+<!-- Header -->
+
+<header class="bg-black text-white p-5">
+
+<nav class="flex justify-between items-center">
+
+
+<h1 class="text-3xl font-bold">
+Fathgraphy
+</h1>
+
+
+<!-- Profile Logo -->
+
+<button id="profileBtn"
+class="bg-white text-black rounded-full w-12 h-12 
+focus:ring-4">
+
+👤
+
+</button>
+
+
+</nav>
+
+</header>
+
+
+
+<!-- Main -->
+
+<main>
+
+
+<section class="text-center p-10 bg-yellow-200 text-black">
+
+
+<h2 id="title"
+class="text-4xl font-bold hover:text-red-700 transition duration-300">
+
+Learn Photography
+
+</h2>
+
+
+<p class="mt-4 text-gray-600">
+
+Photography education for beginners
+
+</p>
+
+
+<button id="changeBtn"
+class="mt-5 bg-blue-600 text-white px-5 py-2 rounded
+focus:ring-4">
+
+Change Text
+
+</button>
+
+
+</section>
+
+
+
+
+
+<section class="p-8 bg-yellow-100">
+
+
+<h2 class="text-2xl font-bold text-center mb-5">
+
+Our Courses
+
+</h2>
+
+
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+
+
+<div class="bg-white p-5 rounded shadow">
+
+<h3 class="font-bold hover:text-blue-500 transition duration-300">
+Camera Basics
+</h3>
+
+<p>
+Learn camera settings.
+</p>
+
+</div>
+
+
+
+<div class="bg-white p-5 rounded shadow">
+
+<h3 class="font-bold">
+Editing
+</h3>
+
+<p>
+Learn photo editing.
+</p>
+
+</div>
+
+
+
+
+<div class="bg-white p-5 rounded shadow">
+
+<h3 class="font-bold">
+Creative Shots
+</h3>
+
+<p>
+Create amazing photos.
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+
+
+
+<!-- Modal -->
+
+
+<div id="modal"
+class="hidden fixed inset-0 bg-black bg-opacity-50 
+flex items-center justify-center">
+
+
+
+<div class="bg-white p-8 rounded w-80">
+
+
+<button id="closeBtn"
+class="float-right text-xl">
+
+❌
+
+</button>
+
+
+<h2 class="text-2xl font-bold">
+
+User Profile
+
+</h2>
+
+
+<p class="mt-4">
+
+Name: Fathima
+
+<br>
+
+Course: Photography
+
+<br>
+
+Level: Beginner
+
+</p>
+
+
+
+<button id="closeBtn2"
+class="mt-5 bg-red-500 text-white px-4 py-2 rounded">
+
+Close
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+// Variables
+
+let student = "Fathima";
+
+const course = "Photography";
+
+
+console.log(student);
+console.log(course);
+
+
+
+// Array
+
+let topics = [
+"Camera",
+"Editing",
+"Lighting"
+];
+
+
+console.log(topics);
+
+topics.push("Design");
+
+console.log(topics);
+
+
+
+// Object
+
+let user = {
+
+name:"Fathima",
+age:20,
+course:"Photography"
+
+};
+
+
+console.log(user);
+
+user.age = 21;
+
+console.log(user);
+
+
+
+
+
+// Functions
+
+
+// Declaration
+
+function welcome(){
+
+console.log("Welcome to Fathgraphy");
+
+}
+
+welcome();
+
+
+
+
+// Expression
+
+let message = function(){
+
+console.log("Learning Photography");
+
+}
+
+
+message();
+
+
+
+
+// Arrow
+
+let arrow = () => {
+
+console.log("Arrow Function");
+
+}
+
+
+arrow();
+
+
+
+
+
+// Built-in utilities
+
+
+console.log("JavaScript Started");
+
+ //alert("Hello");
+
+
+ //prompt example
+ //let name = prompt("Enter your name");
+
+
+ //confirm example
+ //confirm("Continue?");
+
+
+
+setTimeout(()=>{
+
+console.log("2 seconds completed");
+
+},2000);
+
+
+
+
+
+
+
+// DOM
+
+
+let title = document.getElementById("title");
+
+
+let button = document.getElementById("changeBtn");
+
+
+
+button.addEventListener("click",()=>{
+
+
+title.innerText =
+"Start Your Photography Journey";
+
+
+});
+
+
+
+
+
+
+// Modal
+
+
+let profileBtn =
+document.getElementById("profileBtn");
+
+
+let modal =
+document.getElementById("modal");
+
+
+let closeBtn =
+document.getElementById("closeBtn");
+
+
+let closeBtn2 =
+document.getElementById("closeBtn2");
+
+
+
+
+profileBtn.addEventListener("click",()=>{
+
+
+modal.classList.remove("hidden");
+
+
+});
+
+
+
+
+
+closeBtn.addEventListener("click",()=>{
+
+
+modal.classList.add("hidden");
+
+
+});
+
+
+
+
+
+closeBtn2.addEventListener("click",()=>{
+
+
+modal.classList.add("hidden");
+
+
+});
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

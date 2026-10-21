@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>FAQ & Events</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+
+<body class="p-10 bg-gray-100">
+
+
+<!-- Tailwind Navbar (adapted template) -->
+
+<nav class="bg-blue-600 text-white p-4 rounded-lg">
+
+<h1 class="text-2xl font-bold">
+My Website
+</h1>
+
+<p>
+Learning JavaScript Events
+</p>
+
+</nav>
+
+
+
+
+<!-- FAQ Section -->
+
+<h2 class="text-3xl font-bold mt-10">
+FAQ
+</h2>
+
+
+<div id="faq" class="mt-5 space-y-4">
+
+
+<div class="question bg-white p-4 rounded shadow cursor-pointer">
+
+<h3 class="font-bold">
+What is JavaScript?
+</h3>
+
+<p class="answer hidden mt-2">
+JavaScript is a programming language used to make webpages interactive.
+</p>
+
+</div>
+
+
+
+<div class="question bg-white p-4 rounded shadow cursor-pointer">
+
+<h3 class="font-bold">
+What is DOM?
+</h3>
+
+<p class="answer hidden mt-2">
+DOM allows JavaScript to access and change HTML elements.
+</p>
+
+</div>
+
+
+
+<div class="question bg-white p-4 rounded shadow cursor-pointer">
+
+<h3 class="font-bold">
+What is Tailwind CSS?
+</h3>
+
+<p class="answer hidden mt-2">
+Tailwind is a utility-first CSS framework.
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- Event Propagation Example -->
+
+
+<h2 class="text-3xl font-bold mt-10">
+Event Propagation
+</h2>
+
+
+
+<div id="parent"
+class="bg-red-300 p-10 mt-5">
+
+
+Parent Div
+
+
+<div id="child"
+class="bg-yellow-300 p-5 mt-5">
+
+Child Div
+
+</div>
+
+
+</div>
+
+
+
+
+<script>
+
+
+
+// EVENT DELEGATION
+
+let faq = document.getElementById("faq");
+
+
+faq.addEventListener("click",function(event){
+
+
+    let question = event.target.closest(".question");
+
+
+    if(question){
+
+
+        let answer = question.querySelector(".answer");
+
+
+        answer.classList.toggle("hidden");
+
+
+    }
+
+
+});
+
+
+
+
+
+// EVENT PROPAGATION
+
+
+let parent =
+document.getElementById("parent");
+
+
+let child =
+document.getElementById("child");
+
+
+
+parent.addEventListener("click",function(){
+
+
+    alert("Parent Div Clicked");
+
+
+});
+
+
+
+child.addEventListener("click",function(event){
+
+
+    alert("Child Div Clicked");
+
+
+    // stop parent event
+
+    event.stopPropagation();
+
+
+});
+
+
+
+</script>
+
+
+
+</body>
+</html>
