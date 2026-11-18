@@ -294,24 +294,54 @@ class="border p-2 w-full mb-3"></textarea>
 
 <div id="preview"
 class="border p-2 mb-3">
-
 Live preview
-
 </div>
-
-
-
 
 <button
 class="bg-blue-600 text-white p-3">
-
 Send
-
 </button>
 
-
-
 <p id="status"></p>
+
+</form>
+
+<script>
+  // 1. Live Preview-നുള്ള Code
+  const nameInput = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+  const messageInput = document.getElementById('message');
+  const preview = document.getElementById('preview');
+
+  function updatePreview() {
+    if (emailInput.value === "" && messageInput.value === "") {
+      preview.innerHTML = "Live preview";
+    } else {
+      preview.innerHTML =`
+      <b>Name:</b>${nameInput.value}<br> <b>Email:</b> ${emailInput.value}<br><b>Message:</b> ${messageInput.value}`;
+    }
+  }
+  nameInput.addEventListener('input',updatePreview);
+  emailInput.addEventListener('input', updatePreview);
+  messageInput.addEventListener('input', updatePreview);
+
+  // 2. Successfully-നുള്ള Code
+  const form = document.getElementById('form');
+  const status = document.getElementById('status');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    status.textContent = "Sending...";
+
+    setTimeout(() => {
+      status.textContent = "Successfully Sent! ✅";
+      status.className = "text-green-600 font-bold mt-2";
+      form.reset();
+      preview.innerHTML = "Live preview";
+    }, 1000);
+  });
+</script>
+
 
 
 </form>
